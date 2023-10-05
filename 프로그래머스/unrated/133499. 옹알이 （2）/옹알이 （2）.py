@@ -1,10 +1,10 @@
 def solution(babbling):
     answer = 0
-    for i in babbling:
-        for j in ['aya','ye','woo','ma']:
-            if j*2 not in i:
-                i=i.replace(j,' ')
-                print("i =", i)
-        if len(i.strip())==0:
-            answer +=1
+    can = ['aya', 'ye', 'woo', 'ma']
+    for ba in babbling:  
+        for c in can:
+            if c * 2 not in ba: 
+                ba = ba.replace(c, ' ')
+        if ba.isspace(): 
+            answer += 1
     return answer
