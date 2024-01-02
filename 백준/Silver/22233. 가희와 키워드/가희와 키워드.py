@@ -1,16 +1,12 @@
 import sys
 
 N, M = map(int, input().split())
-memo = {}
-answer = N
+notes = set(sys.stdin.readline().strip() for _ in range(N))
+keywords = set(notes)
 
-for _ in range(N):
-    memo[sys.stdin.readline().rstrip()] = 1
 
-for _ in range(M):
-    post = sys.stdin.readline().rstrip().split(',')
-    for keyword in post:
-        if keyword in memo and memo[keyword] == 1:
-            memo[keyword] = 0
-            answer -= 1
-    print(answer)
+for i in range(N+2, N+M+2):
+    post = set(sys.stdin.readline().strip().split(","))
+    keywords -= post
+
+    print(len(keywords))
