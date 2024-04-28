@@ -6,7 +6,6 @@ def solution(m, n, puddles):
     for i, j in puddles:
         dp[j][i] = -1
     
-    # 경로찾기
     for i in range(1, n+1):
         for j in range(1, m+1):
             #웅덩이(dp = -1)라면? continue 
